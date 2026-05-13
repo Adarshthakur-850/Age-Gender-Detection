@@ -1,44 +1,139 @@
-# Age & Gender Detection System
+# Age and Gender Detection System
 
-A real-time Computer Vision system that detects faces and predicts Age and Gender using OpenCV DNN.
+A Machine Learning/Computer Vision project that detects human faces in real-time and predicts:
+
+- Age group
+- Gender
+- Face location
+
+This project uses **Python**, **OpenCV**, and Deep Learning models for real-time age and gender classification through webcam input or uploaded images.
+
+---
 
 ## Features
-- **Face Detection**: Uses ResNet SSD (Single Shot Detector) for fast and accurate face tracking.
-- **Age Prediction**: Classifies ag e into 8 buckets (0-2, 4-6, ..., 60+).
-- **Gender Prediction**: Classifies as Male or Female.
+
+✅ Real-time face detection using webcam  
+✅ Predicts gender (Male/Female)  
+✅ Predicts approximate age range  
+✅ Supports image input detection  
+✅ Bounding box visualization on detected faces  
+✅ Fast and lightweight implementation  
+
+---
+
+## Tech Stack
+
+- Python
+- OpenCV
+- TensorFlow / Keras
+- NumPy
+- CNN
+- Deep Learning Models
+
+---
 
 ## Project Structure
-```
-Age & Gender Detection/
+
+```bash
+Age-Gender-Detection/
 │
-├── models/               # Contains .caffemodel and .prototxt files
-│   └── download_models.py # Script to fetch models
-├── detector.py           # Face detection logic
-├── predictor.py          # Age/Gender prediction logic
-├── main.py               # Main application loop
-└── requirements.txt
+├── models/
+│   ├── age_model.h5
+│   ├── gender_model.h5
+│
+├── images/
+│   ├── sample1.jpg
+│
+├── app.py
+├── detect.py
+├── requirements.txt
+├── README.md
 ```
 
-## Setup
+---
 
-1.  **Install Dependencies**:
-    ```bash
-    pip install -r requirements.txt
-    ```
+## Installation
 
-2.  **Download Models** (One-time setup):
-    ```bash
-    python models/download_models.py
-    ```
-    *This downloads the required Caffe models (~50MB) to the `models/` directory.*
+Clone the repository:
 
-## Running the Application
+```bash
+git clone https://github.com/Adarshthakur-850/Age-Gender-Detection.git
+cd Age-Gender-Detection
+```
 
-1.  **Start the Webcam Stream**:
-    ```bash
-    python main.py
-    ```
-2.  **Stop**: Press `q` to exit.
+Install dependencies:
 
-## Troubleshooting
-- **Models not found**: Ensure you ran `models/download_models.py` and that `models/` folder contains 6 files.
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## How to Run
+
+### For webcam detection
+
+```bash
+python app.py
+```
+
+### For image detection
+
+```bash
+python detect.py
+```
+
+---
+
+## Working Process
+
+1. Capture image/video frame  
+2. Detect face using OpenCV  
+3. Extract facial region  
+4. Pass face image to trained model  
+5. Predict age  
+6. Predict gender  
+7. Display final output on screen  
+
+---
+
+## Model Output Example
+
+```bash
+Gender: Male
+Age: 21-30
+```
+
+---
+
+## Applications
+
+- Smart surveillance systems  
+- Retail customer analytics  
+- Attendance systems  
+- Human-computer interaction  
+- Demographic analysis  
+
+---
+
+## Future Improvements
+
+- Improve model accuracy  
+- Add emotion detection  
+- Deploy using Flask/FastAPI  
+- Docker deployment  
+- Cloud deployment support  
+
+---
+
+## Author
+
+**Adarsh Thakur**
+
+GitHub: https://github.com/Adarshthakur-850
+
+---
+
+## License
+
+This project is open-source and available under the MIT License.
